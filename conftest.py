@@ -27,6 +27,7 @@ def browser(request):
         browser = webdriver.Firefox()
     else:
         raise pytest.UsageError(Resources.messages.ERROR_NO_BROWSER)
+    browser.implicitly_wait(Resources.values.IMPLICITLY_WAIT)
     yield browser
     print(f"\n{Resources.messages.INFO_QUIT_BROWSER}")
     browser.quit()
