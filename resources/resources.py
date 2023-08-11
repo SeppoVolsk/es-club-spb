@@ -1,6 +1,12 @@
 class _Messages():
     ERROR_HEADER_NOT_VISIBLE = "Header не отображается!"
-    ERROR_NO_PHONE = "Phone number is not presented!"
+    ERROR_HEADER_FAST_LINK_MENU_NOT_VISIBLE = "Header->FastLinkMenu не отображается!"
+    ERROR_BODY_MENU_NOT_VISIBLE = "Header->BodyMenu не отображается!"
+    ERROR_HEADER_ES_CLUB_LOGO_NOT_VISIBLE = "Header->EsClubLogo не отображается!"
+    ERROR_HEADER_SALE_LINK_NOT_VISIBLE = "Header->SaleLink не отображается!"
+    ERROR_HEADER_PHONE_NUMBER_NOT_VISIBLE = "Header->PhoneNumber не отображается!"
+    ERROR_HEADER_BEAUTY_SALON_LINK_NOT_VISIBLE = "Header->BeautySalonLink не отображается!"
+
     ERROR_NO_BROWSER = "--browser_name should be chrome or firefox"
     ERROR_INCORRECT_URL = "Incorrect url:"
     INFO_START_CHROME = "start Chrome browser for test.."

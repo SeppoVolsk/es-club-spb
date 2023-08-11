@@ -1,5 +1,6 @@
 from enum import Enum
-from pages.base_page import BasePage
+from components.base_component import BaseComponent
+from locators.locators import Locators
 from resources.resources import Resources
 
 
@@ -12,7 +13,9 @@ class _FastlinkItems(Enum):
     about_3d = "about/3d/"
 
 
-class Fastlink(BasePage):
+class FastLinkMenu(BaseComponent):
+    def is_visible(self):
+        return super().is_visible(Locators.header.FAST_LINK_MENU_COMMON)
     def check_fastlink_items_urls(self):
         for e in _FastlinkItems:
             self.browser.get(Resources.links.BASE_URL + e.value)

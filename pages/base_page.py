@@ -1,8 +1,9 @@
 from selenium.webdriver.chrome.webdriver import WebDriver
-from selenium import webdriver
 
-class BasePage:
-    def __init__(self, browser=webdriver.Chrome(), url=None):
+
+class BasePage():
+
+    def __init__(self, browser, url=None):
         self.browser: WebDriver = browser
         self.url = url
 
