@@ -14,5 +14,5 @@ class MainPage(BasePage):
         return self
 
     def should_be_phone_number(self):
-        return self.browser.find_element(*Locators.main_page.HEADER_PHONE_NUMBER).text
+        return self.browser.find_element(*Locators.main_page.PHONE_NUMBER).text
 
