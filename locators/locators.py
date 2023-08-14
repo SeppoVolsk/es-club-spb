@@ -1,4 +1,4 @@
-from locators._header_locators import _HeaderLocators
+from locators.header._header_locators import _HeaderLocators
 from locators._main_page_locators import _MainPageLocators
 
 
