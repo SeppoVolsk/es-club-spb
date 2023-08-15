@@ -8,7 +8,9 @@ from resources.resources import Resources
 
 
 class FastLinkMenu(BaseComponent):
+
     def __init__(self, browser):
+
         super().__init__(browser)
         self.about_item = ClickableComponent(locator=Locators.header.fast_link_menu.ABOUT,
                                         link=Resources.links.BASE_URL + Resources.links.ENDPOINT_ABOUT,
@@ -37,3 +39,9 @@ class FastLinkMenu(BaseComponent):
 
     def is_visible(self):
         return super().is_visible(Locators.header.FAST_LINK_MENU_COMMON)
+
+
+
+
+
+
