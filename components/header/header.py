@@ -34,5 +34,8 @@ class Header(BaseComponent):
     def current_url(self):
         return self.browser.current_url
 
+    def is_on_page(self):
+        return super().is_on_page(Locators.header.HEADER_COMMON)
+
     def is_visible(self):
         return super().is_visible(Locators.header.HEADER_COMMON)

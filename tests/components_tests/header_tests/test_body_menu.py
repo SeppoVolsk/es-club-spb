@@ -1,3 +1,4 @@
+from logger.logger import l
 from resources.resources import Resources
 
 

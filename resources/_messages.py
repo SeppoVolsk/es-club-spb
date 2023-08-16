@@ -1,27 +1,28 @@
+from resources._colors import _Colors
+
+
 class _ErrorsMessages():
-    HEADER_NOT_VISIBLE = "Header не отображается!"
-    HEADER_FAST_LINK_MENU_NOT_VISIBLE = "Header->FastLinkMenu не отображается!"
-    BODY_MENU_NOT_VISIBLE = "Header->BodyMenu не отображается!"
-    HEADER_ES_CLUB_LOGO_NOT_VISIBLE = "Header->EsClubLogo не отображается!"
-    HEADER_SALE_LINK_NOT_VISIBLE = "Header->SaleLink не отображается!"
-    HEADER_PHONE_NUMBER_NOT_VISIBLE = "Header->PhoneNumber не отображается!"
-    HEADER_BEAUTY_SALON_LINK_NOT_VISIBLE = "Header->BeautySalonLink не отображается!"
-    NO_BROWSER = "--browser_name should be chrome or firefox"
-    INCORRECT_URL = "Incorrect url:"
+    _err_color = _Colors.ORANGE_BG
+    NOT_PRESENTED = f"{_err_color}нет такого элемента!{_Colors.RESET}"
+    NOT_VISIBLE = f"{_err_color}не виден на странице!{_Colors.RESET}"
+    NO_BROWSER = f"{_err_color}--browser_name should be chrome or firefox{_Colors.RESET}"
+    INCORRECT_URL = f"{_err_color}Incorrect url:{_Colors.RESET}"
+
+
 class _InfoMessages():
-    START_CHROME = "start Chrome browser for test.."
-    START_FIREFOX = "start Firefox browser for test.."
-    QUIT_BROWSER = "quit browser.."
+    _info_color = _Colors.CYAN
+    START_CHROME = f"{_info_color}start Chrome browser for test..{_Colors.RESET}"
+    START_FIREFOX = f"{_info_color}start Firefox browser for test..{_Colors.RESET}"
+    QUIT_BROWSER = f"{_info_color}quit browser..{_Colors.RESET}"
+
 
 class _HelpMessages():
-    CHOOSE_BROWSER = "Choose browser: chrome or firefox"
-    CHOOSE_LANGUAGE = "Choose user language"
+    _help_color = _Colors.GREEN
+    CHOOSE_BROWSER = f"{_help_color}Choose browser: chrome or firefox{_Colors.RESET}"
+    CHOOSE_LANGUAGE = f"{_help_color}Choose user language{_Colors.RESET}"
 
 
 class _Messages():
     error = _ErrorsMessages()
     info = _InfoMessages()
     help = _HelpMessages()
-
-
-
