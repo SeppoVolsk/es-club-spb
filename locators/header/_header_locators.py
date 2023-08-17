@@ -6,7 +6,7 @@ from resources.resources import Resources
 
 class _HeaderLocators:
     fast_link_menu = _FastLinkMenuLocators()
-    HEADER_COMMON = (By.XPATH, '//header[@class="bx-heade"]')
+    HEADER_COMMON = (By.XPATH, '//header[@class="bx-header"]')
     FAST_LINK_MENU_COMMON = (By.XPATH, '//div[@class="fastlink"]')
     BODY_MENU_COMMON = (By.XPATH, '//div[@class="row"]')
     ES_CLUB_LOGO_COMMON = (By.XPATH, '//div[@class="logotop"]//img')

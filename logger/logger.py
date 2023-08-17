@@ -21,19 +21,19 @@ class ColorFormatter(logging.Formatter):
 
 
 l = logging.getLogger()
-l.setLevel(logging.DEBUG)
+l.setLevel(R.values.LOGGING_LEVEL)
 """
 File Handler
 """
 file_handler = logging.FileHandler(__name__)
 file_handler.setFormatter(logging.Formatter(_format_template))
-file_handler.setLevel(logging.DEBUG)
+file_handler.setLevel(R.values.LOGGING_LEVEL)
 l.addHandler(file_handler)
 """
 Console Handler
 """
 console_color_handler = logging.StreamHandler()
 console_color_handler.setFormatter(ColorFormatter())
-console_color_handler.setLevel(logging.DEBUG)
+console_color_handler.setLevel(R.values.LOGGING_LEVEL)
 l.addHandler(console_color_handler)
 

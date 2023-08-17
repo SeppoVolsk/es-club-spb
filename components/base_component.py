@@ -1,5 +1,7 @@
+from selenium.common import NoSuchElementException
 from selenium.webdriver.chrome.webdriver import WebDriver
 
+from app_error._app_error import E
 from logger.logger import l
 
 
@@ -10,12 +12,12 @@ class BaseComponent:
     def is_visible(self, *args):
         return self.browser.find_element(*args[0]).is_displayed()
 
-    def is_on_page(self, *args):
+    def is_exists(self, *args):
         is_on_page = True
         try:
             self.browser.find_element(*args[0])
         except Exception as err:
-            l.error("ЭЛЕМЕНТ НЕ НАЙДЕН НА СТРАНИЦЕ!")
+            l.error(E.message(err))
             is_on_page = False
         return is_on_page
 

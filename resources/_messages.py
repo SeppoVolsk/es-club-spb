@@ -20,6 +20,7 @@ class _HelpMessages():
     _help_color = _Colors.GREEN
     CHOOSE_BROWSER = f"{_help_color}Choose browser: chrome or firefox{_Colors.RESET}"
     CHOOSE_LANGUAGE = f"{_help_color}Choose user language{_Colors.RESET}"
+    CHOOSE_LOG_LEVEL = f"{_help_color}Choose logging level: debug, info, warning, error{_Colors.RESET}"
 
 
 class _Messages():

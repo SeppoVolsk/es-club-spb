@@ -11,8 +11,6 @@ class ClickableComponent(BaseComponent):
         self.description = description
 
 
-    # self.browser: WebDriver = browser
-
     def click(self):
         self.browser.find_element(*self.locator).click()
 
