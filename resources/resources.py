@@ -13,4 +13,4 @@ class Resources():
     colors = _Colors()
 
 
-R = Resources()
+R: Resources = Resources()

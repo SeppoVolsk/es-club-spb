@@ -16,7 +16,3 @@ def main_page(browser):
 def open_main_page(main_page):
     main_page.open()
 
-
-@pytest.fixture()
-def current_url(main_page):
-    return main_page.current_url

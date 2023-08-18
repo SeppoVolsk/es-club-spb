@@ -8,6 +8,9 @@ class _ErrorsMessages():
     NO_BROWSER = f"{_err_color}--browser_name should be chrome or firefox{_Colors.RESET}"
     INCORRECT_URL = f"{_err_color}Incorrect url:{_Colors.RESET}"
 
+    def invalid_link(self, actual, expected):
+        return f"{self._err_color}Invalid link! Actual {actual} Expected {expected}{_Colors.RESET}"
+
 
 class _InfoMessages():
     _info_color = _Colors.CYAN

@@ -4,16 +4,15 @@ from components.base_component import BaseComponent
 
 
 class ClickableComponent(BaseComponent):
-    def __init__(self, locator, link, description, browser):
-        super().__init__(browser=browser)
-        self.locator = locator
+    def __init__(self,
+                 browser: WebDriver | None,
+                 locator: str | None,
+                 description: str | None = None,
+                 link: str | None = None
+                 ):
+        super().__init__(browser, locator, description)
         self.link = link
-        self.description = description
-
 
     def click(self):
         self.browser.find_element(*self.locator).click()
 
-
-    def is_visible(self):
-        return super().is_visible(self.locator)

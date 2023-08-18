@@ -1,17 +1,22 @@
+from selenium.webdriver.chrome.webdriver import WebDriver
+
 from components.base_component import BaseComponent
+from components.clickable_component import ClickableComponent
 from locators.locators import Locators
 
 
 class Header(BaseComponent):
-    def __init__(self, browser,
-                 fast_link_menu=None,
-                 body_menu=None,
-                 address_schedule_block=None,
-                 sale_link=None,
-                 es_club_logo=None,
-                 beauty_salon_link=None,
-                 phone_number_link=None):
-        super().__init__(browser)
+    def __init__(self, browser: WebDriver | None,
+                 fast_link_menu: dict[str:ClickableComponent] | None = None,
+                 body_menu: list[ClickableComponent] | None = None,
+                 address_schedule_block: list[BaseComponent] | None = None,
+                 sale_link: ClickableComponent | None = None,
+                 es_club_logo: ClickableComponent | None = None,
+                 beauty_salon_link: ClickableComponent | None = None,
+                 phone_number_link: ClickableComponent | None = None):
+        super().__init__(browser,
+                         locator=Locators.header.HEADER_COMMON,
+                         description="Верхняя часть сайта")
         self.fast_link_menu = fast_link_menu
         self.body_menu = body_menu
         self.address_schedule_block = address_schedule_block
@@ -19,10 +24,3 @@ class Header(BaseComponent):
         self.es_club_logo = es_club_logo
         self.beauty_salon_link = beauty_salon_link
         self.phone_number_link = phone_number_link
-
-
-    def is_exists(self):
-        return super().is_exists(Locators.header.HEADER_COMMON)
-
-    def is_visible(self):
-        return super().is_visible(Locators.header.HEADER_COMMON)
