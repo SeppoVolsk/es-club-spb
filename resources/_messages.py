@@ -6,7 +6,7 @@ class _ErrorsMessages():
     NOT_PRESENTED = f"{_err_color}нет такого элемента!{_Colors.RESET}"
     NOT_VISIBLE = f"{_err_color}не виден на странице!{_Colors.RESET}"
     NO_BROWSER = f"{_err_color}--browser_name should be chrome or firefox{_Colors.RESET}"
-    INCORRECT_URL = f"{_err_color}Incorrect url:{_Colors.RESET}"
+    INCORRECT_URL = f"{_err_color}Incorrect url{_Colors.RESET}"
 
     def invalid_link(self, actual, expected):
         return f"{self._err_color}Invalid link! Actual {actual} Expected {expected}{_Colors.RESET}"

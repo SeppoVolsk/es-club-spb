@@ -1,15 +1,12 @@
-from locators.locators import Locators
-from resources.resources import Resources
+import pytest
 
 
-def test_go_to_uslugi(main_page):
-    (main_page
-     .open()
-     .go_to_uslugi_tab())
+from resources.resources import Resources, R
 
 
-def test_phone_number_should_be_shown(main_page):
-    actual = (main_page
-              .open()
-              .should_be_phone_number())
-    assert actual == Resources.strings.PHONE_NUMBER, Resources.messages.ERROR_NO_PHONE + actual
+@pytest.mark.main_page
+def test_current_url_is_base_url(main_page):
+    assert (main_page
+            .open()
+            .current_url == R.links.BASE_URL), R.messages.error.INCORRECT_URL
+

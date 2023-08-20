@@ -10,3 +10,8 @@ class BasePage():
     def open(self):
         self.browser.get(self.url)
         return self
+
+    @property
+    def current_url(self):
+        return self.browser.current_url
+

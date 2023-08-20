@@ -8,11 +8,7 @@ from resources.resources import Resources
 
 @pytest.fixture()
 def main_page(browser):
-    main_page = MainPage(browser, Resources.links.BASE_URL)
+    main_page = MainPage(browser)
     return main_page
 
-
-@pytest.fixture()
-def open_main_page(main_page):
-    main_page.open()
 
