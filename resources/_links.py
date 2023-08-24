@@ -8,3 +8,6 @@ class _Links():
     ENDPOINT_ABOUT_WORKPLACE = "about/workplace/"
     ENDPOINT_ABOUT_SALE_DEN_KLIENTA = "about/sale/den-klienta/"
     ENDPOINT_ABOUT_3D = "about/3d/"
+    ENDPOINT_MASTERS = "about/masters/"
+    ENDPOINT_PORTFOLIO = "about/portfolio/"
+    ENDPOINT_CONTACTS = "about/contacts/"

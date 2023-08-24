@@ -1,11 +1,13 @@
 from selenium.webdriver.common.by import By
 
+from locators.header.parts._body_menu_locators import _BodyMenuLocators
 from locators.header.parts._fast_link_menu_locators import _FastLinkMenuLocators
 from resources.resources import Resources
 
 
 class _HeaderLocators:
     fast_link_menu = _FastLinkMenuLocators()
+    body_menu = _BodyMenuLocators()
     HEADER_COMMON = (By.XPATH, '//header[@class="bx-header"]')
     FAST_LINK_MENU_COMMON = (By.XPATH, '//div[@class="fastlink"]')
     BODY_MENU_COMMON = (By.XPATH, '//div[@class="row"]')
