@@ -16,7 +16,7 @@ def items():
     return Item()
 
 @pytest.fixture()
-def fast_link_menu(header, items):
+def fast_link_menu(header, items, browser):
     about = ClickableComponent(locator=Locators.header.fast_link_menu.ABOUT,
                                link=R.links.BASE_URL + R.links.ENDPOINT_ABOUT,
                                description="О нас",

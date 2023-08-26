@@ -15,4 +15,3 @@ class ClickableComponent(BaseComponent):
 
     def click(self):
         self.browser.find_element(*self.locator).click()
-
