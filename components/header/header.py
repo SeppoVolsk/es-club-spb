@@ -7,8 +7,8 @@ from locators.locators import Locators
 
 class Header(BaseComponent):
     def __init__(self, browser: WebDriver | None,
-                 fast_link_menu: dict[str:ClickableComponent] | None = None,
-                 body_menu: list[ClickableComponent] | None = None,
+                 fast_menu: dict[str:ClickableComponent] | None = None,
+                 body_menu: dict[str:ClickableComponent] | None = None,
                  address_schedule_block: list[BaseComponent] | None = None,
                  sale_link: ClickableComponent | None = None,
                  es_club_logo: ClickableComponent | None = None,
@@ -17,7 +17,7 @@ class Header(BaseComponent):
         super().__init__(browser,
                          locator=Locators.header.HEADER_COMMON,
                          description="Верхняя часть сайта")
-        self.fast_link_menu = fast_link_menu
+        self.fast_menu = fast_menu
         self.body_menu = body_menu
         self.address_schedule_block = address_schedule_block
         self.sale_link = sale_link

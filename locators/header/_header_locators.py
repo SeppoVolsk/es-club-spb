@@ -1,14 +1,14 @@
 from selenium.webdriver.common.by import By
 
 from locators.header.parts._body_menu_locators import _BodyMenuLocators
-from locators.header.parts._fast_link_menu_locators import _FastLinkMenuLocators
+from locators.header.parts._fast_menu_locators import _FastMenuLocators
 from resources.resources import Resources
 
 
 class _HeaderLocators:
-    fast_link_menu = _FastLinkMenuLocators()
+    fast_menu = _FastMenuLocators()
     body_menu = _BodyMenuLocators()
-    HEADER_COMMON = (By.XPATH, '//header[@class="bx-header"]')
+    HEADER_COMMON = (By.XPATH, '//header')
     FAST_LINK_MENU_COMMON = (By.XPATH, '//div[@class="fastlink"]')
     BODY_MENU_COMMON = (By.XPATH, '//div[@class="row"]')
     ES_CLUB_LOGO_COMMON = (By.XPATH, '//div[@class="logotop"]//img')

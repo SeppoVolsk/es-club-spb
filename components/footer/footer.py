@@ -8,5 +8,5 @@ class Footer(BaseComponent):
     def __init__(self, browser: WebDriver):
         super().__init__(
             browser,
-            locator=Locators.header.HEADER_COMMON,
+            locator=Locators.footer.FOOTER_COMMON,
             description="Нижняя часть сайта")

@@ -30,6 +30,7 @@ def log_level(request):
 @pytest.fixture(scope="session")
 def browser(request, log_level):
     options = Options()
+    options.add_argument("--headless")
     user_language = request.config.getoption("user_language")
     options.add_experimental_option('prefs', {'intl.accept_languages': user_language})
     browser_name = request.config.getoption("browser_name")

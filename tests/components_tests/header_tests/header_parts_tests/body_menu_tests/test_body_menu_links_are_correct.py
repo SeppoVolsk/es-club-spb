@@ -3,11 +3,7 @@ import pytest
 from resources.resources import R
 
 
-class TestBodyMenuItems():
-
-    @pytest.fixture(autouse=True)
-    def main_page(self, define_body_menu, main_page):
-        return main_page
+class TestBodyMenuLinksAreCorrect():
 
     @pytest.mark.bodyprobe
     def test_body_menu___main___link_is_correct(self, main_page, items):

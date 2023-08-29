@@ -52,3 +52,8 @@ def define_body_menu(main_page, items, browser):
         items.PORTFOLIO: portfolio,
         items.CONTACTS: contacts,
         items.WRITE_TO: write_to}
+
+
+@pytest.fixture()
+def main_page(define_body_menu, main_page):
+    return main_page
