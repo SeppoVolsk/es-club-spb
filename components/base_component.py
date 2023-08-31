@@ -21,7 +21,7 @@ class BaseComponent:
     def is_exists(self):
         is_on_page = True
         try:
-            self.browser.find_element(self.locator)
+            self.browser.find_element(*self.locator)
         except Exception as err:
             l.error(E.message(err))
             is_on_page = False

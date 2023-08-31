@@ -6,14 +6,16 @@ from resources.resources import R
 
 
 @pytest.fixture()
-def phone_number_link(browser, header):
-    header.phone_number_link = ClickableComponent(locator=Locators.header.PHONE_NUMBER,
-                                                  link="tel:88124673030",
-                                                  description='Надпись "+78124673030"',
-                                                  browser=browser)
-    return header.phone_number_link
+def define_phone_number_link(browser, main_page):
+    main_page.header.phone_number_link = ClickableComponent(locator=Locators.header.PHONE_NUMBER,
+                                                            link="tel:88124673030",
+                                                            description='Надпись "+78124673030"',
+                                                            browser=browser)
 
 
 @pytest.mark.phone_probe
-def test_phone_number_is_visible(phone_number_link):
-    assert phone_number_link.is_visible(), R.strings.PHONE_NUMBER + R.messages.error.NOT_VISIBLE
+def test_phone_number_is_visible(define_phone_number_link, main_page):
+    assert (main_page
+            .open()
+            .header
+            .phone_number_link.is_visible()), R.strings.PHONE_NUMBER + R.messages.error.NOT_VISIBLE
