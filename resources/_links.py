@@ -11,3 +11,4 @@ class _Links():
     ENDPOINT_MASTERS = "about/masters/"
     ENDPOINT_PORTFOLIO = "about/portfolio/"
     ENDPOINT_CONTACTS = "about/contacts/"
+    ENDPOINT_SEARCH_RESULT = "search-result/"

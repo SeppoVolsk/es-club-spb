@@ -18,4 +18,6 @@ class _HeaderLocators:
     SCHEDULE_COMMON = (By.XPATH, '//div[@class="place"]')
     ADDRES_MARK_COMMON = (By.XPATH, '//img[@src="/upload/medialibrary/edf/adres.png"]')
     PHONE_NUMBER = (By.XPATH, f'//span[text()="{Resources.strings.PHONE_NUMBER}"]')
+    SEARCH_INPUT = (By.XPATH, '//input[@id="title-search-input"]')
+    SEARCH_BUTTON = (By.XPATH, '//span[@class="bx-input-group-btn"]')
 

@@ -13,5 +13,7 @@ class _Strings():
     SALE_LINK = f"{_title_color}sale_link{_Colors.RESET}"
     BEAUTY_SALON_LINK = f"{_title_color}beauty_salon_link{_Colors.RESET}"
     ADDRESS_SCHEDULE_BLOCK = f"{_title_color}address_schedule_block{_Colors.RESET}"
+    SEARCH_INPUT = f"{_title_color}search_input{_Colors.RESET}"
+    SEARCH_BUTTON = f"{_title_color}search_button{_Colors.RESET}"
 
 
