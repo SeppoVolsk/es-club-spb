@@ -15,5 +15,6 @@ class _Strings():
     ADDRESS_SCHEDULE_BLOCK = f"{_title_color}address_schedule_block{_Colors.RESET}"
     SEARCH_INPUT = f"{_title_color}search_input{_Colors.RESET}"
     SEARCH_BUTTON = f"{_title_color}search_button{_Colors.RESET}"
+    ROUTE_STRING = f"{_title_color}route_string{_Colors.RESET}"
 
 

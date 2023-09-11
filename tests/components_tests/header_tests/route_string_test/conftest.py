@@ -2,6 +2,7 @@ from enum import *
 
 import pytest
 
+from components.base_component import BaseComponent
 from components.clickable_component import ClickableComponent
 from locators.locators import Locators
 from resources.resources import R
@@ -46,49 +47,31 @@ def items():
         GLAVNAYA=auto(),
         SALON=auto()
     class Item:
-        FIRST = _ItemsConst.GLAVNAYA
-        SECOND = _ItemsConst.SALON
-        THIRD: _ItemsThird
+        first = _ItemsConst.GLAVNAYA
+        second = _ItemsConst.SALON
+        third = _ItemsThird.USLUGI
 
     return Item()
 
 
 @pytest.fixture()
-def define_route_string(main_page, items, browser):
-    about = ClickableComponent(locator=Locators.header.fast_menu.ABOUT,
+def setup_route_string_first_second_items(main_page, items, browser):
+    first_item = ClickableComponent(locator=Locators.header.route_string.FIRST_ITEM,
+                               link=R.links.BASE_URL,
+                               description="Главная cтраница",
+                               browser=browser)
+    second_item = ClickableComponent(locator=Locators.header.fast_menu.MEDIA,
                                link=R.links.BASE_URL + R.links.ENDPOINT_ABOUT,
-                               description="О нас",
+                               description="Салон красоты",
                                browser=browser)
-    media = ClickableComponent(locator=Locators.header.fast_menu.MEDIA,
-                               link=R.links.BASE_URL + R.links.ENDPOINT_ABOUT_MEDIA,
-                               description="Медиа",
-                               browser=browser)
-    otzyvy = ClickableComponent(locator=Locators.header.fast_menu.OTZYVY,
-                                link=R.links.BASE_URL + R.links.ENDPOINT_ABOUT_OTZYVY,
-                                description="Отзывы",
-                                browser=browser)
-    workplace = ClickableComponent(locator=Locators.header.fast_menu.WORKPLACE,
-                                   link=R.links.BASE_URL + R.links.ENDPOINT_ABOUT_WORKPLACE,
-                                   description="Аренда",
-                                   browser=browser)
-    den_klienta = ClickableComponent(locator=Locators.header.fast_menu.SALE_DEN_KLIENTA,
-                                     link=R.links.BASE_URL + R.links.ENDPOINT_ABOUT_SALE_DEN_KLIENTA,
-                                     description="День клиента",
-                                     browser=browser)
-    tour_3d = ClickableComponent(locator=Locators.header.fast_menu.TOUR_3D,
-                                 link=R.links.BASE_URL + R.links.ENDPOINT_ABOUT_3D,
-                                 description="3d тур",
-                                 browser=browser)
 
-    main_page.header.fast_menu = {
-        items.ABOUT: about,
-        items.MEDIA: media,
-        items.OTZYVY: otzyvy,
-        items.WORKPLACE: workplace,
-        items.DEN_KLIENTA: den_klienta,
-        items.TOUR_3D: tour_3d}
+
+    main_page.header.route_string = {
+        items.first: first_item,
+        items.second: second_item,
+        }
 
 
 @pytest.fixture()
-def main_page(define_fast_menu, main_page):
+def main_page(setup_route_string_first_second_items, main_page):
     return main_page

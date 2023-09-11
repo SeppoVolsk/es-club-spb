@@ -7,7 +7,7 @@ from resources.resources import Resources
 
 
 @pytest.fixture()
-def main_page(browser):
+def main_page(browser) -> MainPage:
     main_page = MainPage(browser)
     return main_page
 

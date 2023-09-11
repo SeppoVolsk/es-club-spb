@@ -15,7 +15,7 @@ class Header(BaseComponent):
                  beauty_salon_link: ClickableComponent | None = None,
                  phone_number_link: ClickableComponent | None = None,
                  search_row: list[BaseComponent, ClickableComponent] | None = None,
-                 route_string: ClickableComponent | None = None):
+                 route_string: dict[str:BaseComponent] | None = None):
         super().__init__(browser,
                          locator=Locators.header.HEADER_COMMON,
                          description="Верхняя часть сайта (Header)")
