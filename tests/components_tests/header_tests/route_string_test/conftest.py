@@ -2,9 +2,10 @@ from enum import *
 
 import pytest
 
-from components.base_component import BaseComponent
+from tests.components_tests.header_tests.body_menu_tests.conftest import define_body_menu
 from components.clickable_component import ClickableComponent
 from locators.locators import Locators
+from pages.main_page.main_page import MainPage
 from resources.resources import R
 
 
@@ -44,8 +45,9 @@ def items():
         CONTACTS = auto()
 
     class _ItemsConst(Enum):
-        GLAVNAYA=auto(),
-        SALON=auto()
+        GLAVNAYA = auto(),
+        SALON = auto()
+
     class Item:
         first = _ItemsConst.GLAVNAYA
         second = _ItemsConst.SALON
@@ -57,21 +59,22 @@ def items():
 @pytest.fixture()
 def setup_route_string_first_second_items(main_page, items, browser):
     first_item = ClickableComponent(locator=Locators.header.route_string.FIRST_ITEM,
-                               link=R.links.BASE_URL,
-                               description="Главная cтраница",
-                               browser=browser)
+                                    link=R.links.BASE_URL,
+                                    description="первый спан 'Главная cтраница' в строке навигации",
+                                    browser=browser)
     second_item = ClickableComponent(locator=Locators.header.fast_menu.MEDIA,
-                               link=R.links.BASE_URL + R.links.ENDPOINT_ABOUT,
-                               description="Салон красоты",
-                               browser=browser)
-
+                                     link=R.links.BASE_URL + R.links.ENDPOINT_ABOUT,
+                                     description="второй спан 'Салон красоты' в строке навигации",
+                                     browser=browser)
 
     main_page.header.route_string = {
         items.first: first_item,
         items.second: second_item,
-        }
+    }
 
 
 @pytest.fixture()
-def main_page(setup_route_string_first_second_items, main_page):
+def main_page(setup_route_string_first_second_items,
+              define_body_menu,
+              main_page) -> MainPage:
     return main_page
